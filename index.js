@@ -1,6 +1,6 @@
 const { Client, GatewayIntentBits } = require('discord.js')
 const dotenv = require('dotenv')
-const User = require('models/user')
+const User = require('./models/user.js')
 dotenv.config()
 const client = new Client({
   intents: [
