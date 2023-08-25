@@ -1,6 +1,7 @@
 const { Client, GatewayIntentBits } = require('discord.js')
 const dotenv = require('dotenv')
 dotenv.config()
+console.log(process.env.TOKEN, "HELLO ====================="); 
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
@@ -97,4 +98,4 @@ client.on('messageCreate', async message => {
   }
 })
 
-client.login(process.env.TOKEN)
+client.login(process.env.TOKEN ?? '')
