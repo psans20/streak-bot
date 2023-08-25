@@ -15,4 +15,4 @@ User.init(
   },
   { sequelize: sqlClient, modelName: 'User' }
 )
-export default User; 
+module.exports = User; 
