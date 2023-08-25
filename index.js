@@ -30,6 +30,7 @@ client.on('messageCreate', async message => {
     const userQuery = await User.findOne({ where: { id: userId } })
     // TODO
     // CHANGE to userQuery
+    console.log(userQuery, 'USERQUERY')
     if (userQuery) {
       console.log(`USER DOESN'T EXIST`)
       const user = {
