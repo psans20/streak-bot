@@ -31,7 +31,7 @@ client.on('messageCreate', async message => {
     // TODO
     // CHANGE to userQuery
     console.log(userQuery, 'USERQUERY')
-    if (userQuery) {
+    if (!userQuery) {
       console.log(`USER DOESN'T EXIST`)
       const user = {
         id: userId,
