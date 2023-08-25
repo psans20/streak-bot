@@ -91,7 +91,10 @@ client.on('messageCreate', async message => {
     }
     const userQuery = await User.findOne({ where: { id: userId } })
     if (userQuery) {
-      await User.update({ lastRelapseTimestamp }, { where: { id: userId } })
+      await User.update(
+        { lastRelapseTimestamp: setTimestamp },
+        { where: { id: userId } }
+      )
     } else {
       const user = {
         id: userId,
