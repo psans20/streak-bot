@@ -1,6 +1,7 @@
 const { Client, GatewayIntentBits } = require('discord.js')
 const dotenv = require('dotenv')
 const User = require('./models/user.js')
+const { sqlClient } = require('./db.js')
 dotenv.config()
 const client = new Client({
   intents: [
@@ -125,5 +126,8 @@ client.on('messageCreate', async message => {
     message.reply('Streak set successfully since last relapse.')
   }
 })
-
-client.login(process.env.TOKEN ?? '')
+async function start () {
+  await sqlClient.sync({})
+  client.login(process.env.TOKEN ?? '')
+}
+start(); 
