@@ -83,12 +83,10 @@ client.on('messageCreate', async message => {
     let setTimestamp = Date.now()
 
     if (!isNaN(daysToSet)) {
-      lastRelapse -= daysToSet * 1000 * 60 * 60 * 24
       setTimestamp -= daysToSet * 1000 * 60 * 60 * 24
     }
 
     if (!isNaN(hoursToSet)) {
-      lastRelapse -= hoursToSet * 1000 * 60 * 60
       setTimestamp -= hoursToSet * 1000 * 60 * 60
     }
     const userQuery = await User.findOne({ where: { id: userId } })
