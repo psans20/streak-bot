@@ -76,8 +76,7 @@ client.on('messageCreate', async message => {
       message.author.send(`Your streak is ${durationString} since last relapse.`);
       message.delete();
     } else {
-      message.reply('You do not have a streak yet.')
-       message.delete();
+      message.reply('You do not have a streak yet.');
     }
   } else if (command === 'set') {
     const userId = message.author.id
