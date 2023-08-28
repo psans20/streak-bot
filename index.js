@@ -46,6 +46,7 @@ client.on('messageCreate', async message => {
     }
 
     message.author.send('Your streak has been reset.');
+    message.delete();
   } else if (command === 'update') {
     const userId = message.author.id
     const userQuery = await User.findOne({ where: { id: userId } })
@@ -75,6 +76,7 @@ client.on('messageCreate', async message => {
       message.author.send(`Your streak is ${durationString} since last relapse.`);
     } else {
       message.reply('You do not have a streak yet.')
+       message.delete();
     }
   } else if (command === 'set') {
     const userId = message.author.id
@@ -104,6 +106,7 @@ client.on('messageCreate', async message => {
     }
 
     message.author.send('Streak set successfully since last relapse.');
+     message.delete();
   }
 })
 async function start () {
